@@ -56,6 +56,10 @@ class Fauna {
     return this.client.query(this.q.CreateIndex(params));
   }
 
+  deleteIndex(name: string) {
+    return this.client.query(this.q.Delete(this.q.Index(name)));
+  }
+
   /**
    * Create new document
    *
