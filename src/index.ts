@@ -30,18 +30,27 @@ class Fauna {
    * @param unique
    * @returns {Promise}
    */
-  createIndex(collection: string, name: string, terms: string, unique: boolean) {
-    const params = {
+  createIndex(collection: string, name: string, parameters = { terms: [], unique: false }) {
+    interface indexParameters {
+      name: string;
+      source: unknown;
+      terms?: Array<string>;
+      unique?: boolean;
+    }
+
+    const params: indexParameters = {
       name,
       source: this.q.Collection(collection),
     };
+
+    const { terms, unique } = parameters;
 
     if (terms) {
       params.terms = terms;
     }
 
-    if (unique === true) {
-      params.unique = true;
+    if (unique) {
+      params.unique = unique;
     }
 
     return this.client.query(this.q.CreateIndex(params));
