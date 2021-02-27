@@ -1,0 +1,11 @@
+{
+  "name": "faunadb-helpers",
+  "version": "1.0.0",
+  "description": "Helpers to interact with FaunaDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martín M.",
+  "license": "MIT"
+}
