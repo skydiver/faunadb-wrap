@@ -22,6 +22,16 @@ class Fauna {
   }
 
   /**
+   * Delete collection
+   *
+   * @param name
+   * @returns {Promise}
+   */
+  deleteCollection(name: string) {
+    return this.client.query(this.q.Delete(this.q.Collection(name)));
+  }
+
+  /**
    * Create new index
    *
    * @param collection
@@ -56,6 +66,12 @@ class Fauna {
     return this.client.query(this.q.CreateIndex(params));
   }
 
+  /**
+   * Delete index
+   *
+   * @param name
+   * @returns {Promise}
+   */
   deleteIndex(name: string) {
     return this.client.query(this.q.Delete(this.q.Index(name)));
   }

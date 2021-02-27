@@ -12,6 +12,11 @@
 await fauna.createCollection('my_collection');
 ```
 
+## Delete collections
+```js
+await fauna.deleteCollection('my_collection');
+```
+
 ### Create indexes
 ```js
 // create an index called "index_name"
