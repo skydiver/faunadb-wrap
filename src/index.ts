@@ -117,6 +117,17 @@ class Fauna {
   }
 
   /**
+   * Delete document
+   *
+   * @param collection
+   * @param documentId
+   * @returns {Promise}
+   */
+  async deleteDocument(collection: string, documentId: string) {
+    return this.client.query(this.q.Delete(this.q.Ref(this.q.Collection(collection), documentId)));
+  }
+
+  /**
    * Retrieve document(s)
    * @param index
    * @param value

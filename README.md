@@ -70,3 +70,8 @@ await fauna.updateDocument('customers', '291699840069403141', {
   tags: null
 });
 ```
+
+### Delete document
+```js
+await fauna.deleteDocument('customers', '291699840069403141');
+```
