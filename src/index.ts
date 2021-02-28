@@ -88,6 +88,35 @@ class Fauna {
   }
 
   /**
+   * Retrieve all documents from a collection
+   *
+   * @param collection
+   * @returns {Promise}
+   */
+  async retrieveDocuments(collection: string) {
+    const result: Record<string, unknown> = await this.client.query(
+      this.q.Map(
+        this.q.Paginate(this.q.Documents(this.q.Collection(collection))),
+        this.q.Lambda((x) => this.q.Get(x)),
+      ),
+    );
+
+    return result.data;
+  }
+
+  /**
+   * Update document
+   *
+   * @param collection
+   * @param documentId
+   * @param data
+   * @returns {Promise}
+   */
+  async updateDocument(collection: string, documentId: string, data: Record<string, unknown>) {
+    return this.client.query(this.q.Update(this.q.Ref(this.q.Collection(collection), documentId), { data }));
+  }
+
+  /**
    * Retrieve document(s)
    * @param index
    * @param value

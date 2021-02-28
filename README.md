@@ -38,3 +38,35 @@ await fauna.createIndex('customers', 'index_unique', {
 ```js
 await fauna.deleteIndex('index_name');
 ```
+
+### Create documents
+```js
+await fauna.createDocument('customers', {
+  firstName: 'John',
+  lastName: 'Smith',
+  age: 40
+});
+```
+
+### Retrieve documents
+```js
+const documents = await fauna.retrieveDocuments('customers');
+console.log(documents);             // PRINT ALL DOCUMENTS
+console.log(documents[0]);          // PRINT FIRST DOCUMENT
+console.log(documents[0].data);     // PRINT DOCUMENT FIELDS
+```
+
+### Update document
+```js
+// Update firstName, age and add tags
+await fauna.updateDocument('customers', '291699840069403141', {
+  firstName: 'Peter',
+  age: 41,
+  tags: ['customer', 'financial']
+});
+
+// Remove tags property
+await fauna.updateDocument('customers', '291699840069403141', {
+  tags: null
+});
+```
