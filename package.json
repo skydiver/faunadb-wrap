@@ -4,11 +4,13 @@
   "description": "Helpers to interact with FaunaDB",
   "license": "MIT",
   "author": "Martín M.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "tsc"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",
