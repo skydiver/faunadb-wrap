@@ -1,9 +1,9 @@
-# faunadb-helpers
-> Helpers to interact with FaunaDB
+# faunadb-wrap
+> Another Node.js wrapper to interact with FaunaDB
 
 
 ## Install
-
+`npm install faunadb-wrap`
 
 ## Usage
 

@@ -1,7 +1,7 @@
 {
-  "name": "faunadb-helpers",
+  "name": "faunadb-wrap",
   "version": "1.0.0",
-  "description": "Helpers to interact with FaunaDB",
+  "description": "Another Node.js wrapper to interact with FaunaDB",
   "license": "MIT",
   "author": "Martín M.",
   "main": "dist/index.js",
